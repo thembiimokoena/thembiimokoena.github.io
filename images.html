@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+	<html>
+		<head>
+		<title>Thembii's Hair Braiding</title>
+		<link rel="stylesheet" href="CSS/styling.css">
+		<script src="https://kit.fontawesome.com/94f61f30c2.js" crossorigin="anonymous"></script>
+		</head>
+	<body>
+	<header>
+		<nav>
+            <ul class="nav">
+                <li><a href="index.html">Home</a></li>
+				<li><a href="AboutUs.html">About Us</a></li>
+				<li><a href="services.html">Salon Services</a></li>
+				<li><a href="images.html">Style Gallery </a></li>
+				<li><a href="contactus.html">Contact Details</a></li>
+            </ul>
+        </nav>
+		</header>
+		<h2 class="h2">Style Gallery</h2>
+
+<div class="nb"> Get Your Head Done Right, Painfree Hairstyles..<i class="fa fa-heart" aria-hidden="true"></i></div>
+<hr>
+
+<div id="myBtnContainer">
+  <button class="btn active" onclick="filterSelection('all')"> Show all</button>
+  <button class="btn" onclick="filterSelection('natural hair')"> Straight Up</button>
+  <button class="btn" onclick="filterSelection('straight back')"> Straight Back</button>
+  <button class="btn" onclick="filterSelection('locks')"> Locks</button>
+  <button class="btn" onclick="filterSelection('braids')"> Braids</button>
+</div>
+
+<!-- Portfolio Gallery Grid -->
+<div class="row">
+  <div class="column locks">
+    <div class="content">
+      <img src="invisiblelocks1.jpg" style="width:100%">
+      <h4>Invisible Locks</h4>
+      <p>Only Use Brazilian Wool</p>
+	  <p>All Colors Are Available</p>
+    </div>
+  </div>
+  <div class="column natural hair">
+    <div class="content">
+    <img src="crotchet1.jpg" style="width:100%">
+      <h4>Crochet Hairstyle</h4>
+      <p>You Can Get Any Style Of Choice.</p>
+	  <p>We Also Add Extensions </p>
+    </div>
+  </div>
+  <div class="column braids">
+    <div class="content">
+    <img src="z.jpg" style="width:100%">
+      <h4>Funani Braids</h4>
+      <p>Get Any Funani Style Of Choice.</p>
+	  <p> Curls Or No Curls It's Your Choice</p>
+    </div>
+  </div>
+  <div class="column braids">
+    <div class="content">
+    <img src="thembi.jpg" style="width:100%">
+      <h4>Knotless Braids</h4>
+      <p>One Million Darling.</p>
+	  <p>Get Any Shape</p>
+    </div>
+  </div>
+  
+  <div class="column braids">
+    <div class="content">
+      <img src="pink.jpg" style="width:100%">
+      <h4>Knotless</h4>
+      <p>Get Your Hair Done Right.</p>
+	  <p>Choose Your Design Style</p>
+    </div>
+  </div>
+
+  <div class="column straight back">
+    <div class="content">
+      <img src="sbk.jpg" style="width:100%">
+      <h4>Cornrows</h4>
+      <p>Choose Your Size & Length</p>
+	  <p>Small / Medium etc..</p>
+    </div>
+  </div>
+  <div class="column locks">
+    <div class="content">
+    <img src="lisa.jpg" style="width:100%">
+      <h4>Jungle Braids</h4>
+      <p>One Million Darling Hairpiece.</p>
+	  <p>Get Any Shape</p>
+    </div>
+  </div>
+  <div class="column straight back">
+    <div class="content">
+    <img src="sbk3.jpg" style="width:100%">
+      <h4>Straight Back</h4>
+      <p>Choose Your Size & Length</p>
+	  <p>Small / Medium etc..</p>
+    </div>
+  </div>
+  <div class="column straight back">
+    <div class="content">
+    <img src="sbk2.jpg" style="width:100%">
+      <h4>Straight Back</h4>
+      <p>Choose Your Size & Length</p>
+	  <p>Small / Medium etc..</p>
+    </div>
+  </div>
+  <div class="column locks">
+    <div class="content">
+    <img src="locss.jpg" style="width:100%">
+      <h4>Invisible Locks</h4>
+      <p>Only Use Brazilian Wool</p>
+	  <p>Choose Your Colour</p>
+    </div>
+  </div>
+  <div class="column natural hair">
+    <div class="content">
+    <img src="sup.jpg" style="width:100%">
+      <h4>Straight Up</h4>
+	  <p> Choose Your Size & Length</p>
+      <p>We Can Mix Any Colours Of Choice.</p>
+    </div>
+  </div>
+  
+  <div class="column natural hair">
+    <div class="content">
+    <img src="sedi.jpg" style="width:100%">
+      <h4>Straight Up</h4>
+	  <p>Hand Free Hairstyle</p>
+      <p>Back To School Hairstyle.</p>
+    </div>
+  </div>
+<!-- END GRID -->
+</div>
+
+<!-- END MAIN -->
+</div>
+
+<script>
+filterSelection("all")
+function filterSelection(c) {
+  var x, i;
+  x = document.getElementsByClassName("column");
+  if (c == "all") c = "";
+  for (i = 0; i < x.length; i++) {
+    w3RemoveClass(x[i], "show");
+    if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+  }
+}
+
+function w3AddClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    if (arr1.indexOf(arr2[i]) == -1) {element.className += " " + arr2[i];}
+  }
+}
+
+function w3RemoveClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    while (arr1.indexOf(arr2[i]) > -1) {
+      arr1.splice(arr1.indexOf(arr2[i]), 1);     
+    }
+  }
+  element.className = arr1.join(" ");
+}
+
+
+// Add active class to the current button (highlight it)
+var btnContainer = document.getElementById("myBtnContainer");
+var btns = btnContainer.getElementsByClassName("btn");
+for (var i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function(){
+    var current = document.getElementsByClassName("active");
+    current[0].className = current[0].className.replace(" active", "");
+    this.className += " active";
+  });
+}
+</script>
+
+
+<footer class="copyright1">
+		<center><p>Copyright &copyThembii. Made with<i class="fa fa-heart" aria-hidden="true"></i> by Hair_by_thembii</p></center>
+</footer>
+</html>
